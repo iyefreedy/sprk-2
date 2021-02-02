@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  font-family: "Nunito", sans-serif;
+}
+
+.img-card-thumbnail {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.table-calendar {
+  width: 100%;
+}
+
+.days-calendar th {
+  width: 150px;
+}
+
+.body-calendar td {
+  height: 100px;
+  text-align: start;
+  vertical-align: top;
+  padding: 10px;
+}
