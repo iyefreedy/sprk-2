@@ -31,15 +31,16 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+// $routes->get('/', 'Auth::login', ['as' => 'login']);
 $routes->get('login', 'Auth::login', ['as' => 'login']);
-$routes->post('login', 'Auth::login', ['as' => 'login']);
+$routes->post('attempt-login', 'Auth::attemptLogin', ['as' => 'attempt-login']);
 $routes->get('register', 'Auth::register', ['as' => 'register']);
-$routes->post('register', 'Auth::register', ['as' => 'register']);
+$routes->post('attempt-register', 'Auth::attemptRegister', ['as' => 'attempt-register']);
 $routes->get('logout', 'Auth::logout', ['as' => 'logout']);
 $routes->get('profile', 'Home::profile', ['as' => 'profile']);
 $routes->post('profile', 'Home::profile', ['as' => 'profile']);
-$routes->get('ruang/pinjam-ruang', 'Ruang::pinjamRuang', ['as' => 'pinjam-ruang']);
-$routes->post('ruang/pinjam-ruang', 'Ruang::pinjamRuang', ['as' => 'pinjam-ruang']);
+$routes->get('ruang/pinjam-ruang', 'Ruang::pinjamRuang', ['as' => 'ruang/pinjam-ruang']);
+$routes->post('ruang/attempt-pinjam', 'Ruang::attemptPinjam', ['as' => 'attempt-pinjam']);
 $routes->get('ruang/menunggu(:hash)', 'Ruang::menunggu$1');
 
 /**

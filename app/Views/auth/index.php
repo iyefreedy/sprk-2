@@ -17,18 +17,18 @@
                <?= session()->getFlashdata('error') ?>
           </div>
      <?php endif; ?>
-     <form action="<?= route_to('login') ?>" method="post">
+     <form action="<?= base_url('attempt-login') ?>" method="post">
           <?= csrf_field() ?>
 
           <div class="form-group mb-3">
                <label for="login">Username</label>
-               <input type="text" class="form-control text-center" name="username" placeholder="Username">
+               <input type="text" class="form-control text-center" name="username">
           </div>
 
 
           <div class="form-group mb-3">
                <label for="password">Password</label>
-               <input type="password" name="password" class="form-control text-center" placeholder="Password">
+               <input type="password" name="password" class="form-control text-center">
           </div>
 
 

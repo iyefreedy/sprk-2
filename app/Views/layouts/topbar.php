@@ -24,19 +24,28 @@
           </div>
 
           <div class="bd-highlight">
-               <a href="#" id="room-link" class="text-white text-decoration-none">
+               <a href="<?= base_url('ruang/setuju') ?>" id="room-link" class="text-white text-decoration-none">
                     <i class="fas fa-check-circle fa-2x d-block text-center"></i>
                     <span>Setuju</span>
                </a>
           </div>
 
           <div class="bd-highlight">
-               <a href="#" class="text-white text-decoration-none">
+               <a href="<?= base_url('ruang/batal') ?>" class="text-white text-decoration-none">
                     <i class="fas fa-times-circle fa-2x d-block text-center"></i>
                     <span>Batal</span>
                </a>
           </div>
+          <script>
+               const roomLink = document.querySelectorAll("#room-link");
 
+               roomLink.forEach((i) => {
+                    if (i.getAttribute("href") == window.location.href) {
+                         i.classList.remove("text-white");
+                         i.classList.add("text-warning");
+                    }
+               });
+          </script>
      </div>
 
 </div>

@@ -63,6 +63,14 @@
                               <input type="text" id="endTime" readonly class="form-control <?= ($validator->getError('end_time')) ? 'is-invalid' : ''; ?>" name="end_time" placeholder="Waktu berakhirnya kegiatan">
                          </div>
                     </div>
+                    <script>
+                         $("#startTime").datetimepicker({
+                              format: "Y-m-d H:i"
+                         });
+                         $("#endTime").datetimepicker({
+                              format: "Y-m-d H:i"
+                         });
+                    </script>
                     <hr>
                     <div class="mb-3 row">
                          <label for="involved_party" class="col-sm-2 col-form-label">Melibatkan Pihak</label>
@@ -106,8 +114,19 @@
                                    <?= $validator->getError('proposal') ?>
                               </div>
                          </div>
-
                     </div>
+                    <script>
+                         $("#inputFile").on("change", function() {
+                              const image = $("#image");
+                              const fileReader = new FileReader();
+
+                              fileReader.readAsDataURL(this.files[0]);
+
+                              fileReader.onload = (e) => {
+                                   image.attr("src", e.target.result);
+                              };
+                         });
+                    </script>
                     <hr>
                     <div class="mb-3 row">
                          <button type="submit" class="btn btn-primary">Submit</button>

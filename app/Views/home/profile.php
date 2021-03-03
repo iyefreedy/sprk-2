@@ -15,6 +15,11 @@
                     <button type="button" id="chooseFile" class="btn btn-primary position-absolute bottom-0 end-0"><i class="fas fa-camera fa-sm fa-fw"></i></button>
                </div>
           </div>
+          <script>
+               $("#chooseFile").on("click", function() {
+                    $("#inputFile").trigger("click");
+               });
+          </script>
 
           <div class="mb-3 row">
                <label for="fullname" class="col-sm-2 col-form-label">Nama Lengkap</label>

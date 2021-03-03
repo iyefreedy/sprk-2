@@ -21,7 +21,7 @@ class Filters extends BaseConfig
 		'before' => [
 			//'honeypot'
 			// 'csrf',
-			'auth' => ['except' => ['login', 'register']]
+			'auth' => ['except' => ['login', 'register', 'attempt-login', 'attempt-register']]
 
 		],
 		'after'  => [
